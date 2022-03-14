@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 def main():
     s = requests.session()  # 创建会话
-    reseturl = "https://service.jiangsugqt.org/youth/lesson"  # 江苏省青年大学习接口
+    loginurl = "https://service.jiangsugqt.org/youth/lesson"  # 江苏省青年大学习接口
 
     # 构造请求头
     headers = {
@@ -17,7 +17,7 @@ def main():
         # esX66JF8QROB5yx89KMpFBwnF2eNrVUbSpx8FVUX 姜宇 008629871
         # vf6yckniFRDqepGNSaSD2SN4IhCv1wj6LPPqfh74 李靖翔
     }
-    login = s.get(reseturl, headers=headers)  # 登录
+    login = s.get(url=loginurl, headers=headers)  # 登录
     # print(login.text)
     login_soup = BeautifulSoup(login.text, 'html.parser')  # 解析信息确认页面
     # print(soup.select(".confirm-user-info"))

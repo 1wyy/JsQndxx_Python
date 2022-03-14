@@ -17,23 +17,19 @@ def main():
     # vf6yckniFRDqepGNSaSD2SN4IhCv1wj6LPPqfh74 李
     }
     login=s.get(reseturl,headers=headers)
-    # data=login.text
-    # # print(res1.text)
-    # print(data)
-    # res=res1.text.find("token")
-    # print(res)
-    # html=res1
-    # # html = BeautifulSoup(data.text, "html.parser")
+    print(login.text)
     token = re.findall(r'var token ?= ?"(.*?)"', login.text) #获取js里的token
-    print(token)
+    lesson_id = re.findall(r"'lesson_id':(.*)", login.text)  # 获取js里的token
+    print(token[0])
+    print(lesson_id[0])
     # # print(pattern.search(script.text).group(1))
     # print(token)
     # # print(soup)
 
     finalurl="https://service.jiangsugqt.org/youth/lesson/confirm"
     params={
-        "_token":token,
-        "lesson_id":"120"
+        "_token":token[0],
+        "lesson_id":lesson_id[0]
     }
     res2=s.post(url=finalurl,params=params)
     res=res2.json()

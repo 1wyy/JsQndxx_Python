@@ -47,3 +47,4 @@
 -----
 
 这样，一个简单的青年大学习的自动学习脚本就做好了。
+另外，我还做了一个java版本的供大家参考https://github.com/yuzaii/Qndxx_Java

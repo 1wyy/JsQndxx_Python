@@ -14,11 +14,11 @@
 
   既然要发送请求，那肯定要知道向哪发送请求
 
-  <img src="image-20220317212319083.png" alt="image-20220317212319083" style="zoom:50%;" />
+  <img src="img/image-20220317212319083.png" alt="image-20220317212319083" style="zoom:50%;" />
 
-  <img src="image-20220317210836350.png" alt="image-20220317210836350" style="zoom:50%;" />
+  <img src="img/image-20220317210836350.png" alt="image-20220317210836350" style="zoom:50%;" />
 
-  <img src="image-20220317211344168.png" alt="image-20220317211344168" style="zoom:50%;" />
+  <img src="img/image-20220317211344168.png" alt="image-20220317211344168" style="zoom:50%;" />
 
 + ##### 分析
 
@@ -36,7 +36,7 @@
 
 ​		当我写到第二个请求的时候发现请求失败，仔细观察了一下，原来在第一个请求发送成功后，在响应体的js里面有一个token和lesson_id
 
-<img src="image-20220317213507633.png" alt="image-20220317213507633" style="zoom:50%;" />
+<img src="img/image-20220317213507633.png" alt="image-20220317213507633" style="zoom:50%;" />
 
 我们只要获取他们，然后添加到参数中就可以了。成功的返回结果如下：
 

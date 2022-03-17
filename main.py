@@ -1,6 +1,7 @@
 import re
 
 import requests
+import urllib3
 from bs4 import BeautifulSoup
 
 
@@ -18,7 +19,8 @@ def main(laravel_session): #参数为cookie里的laravel_session 自行抓包获
         # esX66JF8QROB5yx89KMpFBwnF2eNrVUbSpx8FVUX 姜宇 008629871
         # vf6yckniFRDqepGNSaSD2SN4IhCv1wj6LPPqfh74 李靖翔
     }
-    login = s.get(url=loginurl, headers=headers)  # 登录
+    urllib3.disable_warnings() #不然会有warning
+    login = s.get(url=loginurl, headers=headers,verify=False)  # 登录
     # print(login.text)
     login_soup = BeautifulSoup(login.text, 'html.parser')  # 解析信息确认页面
     # print(soup.select(".confirm-user-info"))
@@ -59,5 +61,5 @@ def main(laravel_session): #参数为cookie里的laravel_session 自行抓包获
 
 
 if __name__ == '__main__':
-    laravel_session="esX66JF8QROB5yx89KMpFBwnF2eNrVUbSpx8FVUX"
+    laravel_session="74FrRKCDVZKhx91w0a4CDG53DmkeXCxBOkSzTTNH"
     main(laravel_session)

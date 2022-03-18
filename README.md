@@ -56,17 +56,20 @@
 ### 多用户使用方式
 使用变量的方式可以在不修改代码的情况下修改账号。
 本地运行前设置变量
-腾讯云设置函数
+
 
 ```json
 export PUSH_PLUS_TOKEN="xxx"
 export QNDXX="aaa&bbb"
 ```
-
+腾讯云函数在环境里设置
 
 
  Push Plus
  官方网站：http://www.pushplus.plus
+ 
  xxx填写您的Token，微信扫码登录后可以获取一对一推送
+ 
  aaa填写您第一个青年大学习的laravel_session， bbb填写您第二个青年大学习的laravel_session，中间用&隔开，以此类推，
+ 
  可以结合腾讯云函数达到全自动完成青年大学习的效果
